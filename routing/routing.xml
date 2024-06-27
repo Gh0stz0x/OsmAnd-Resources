@@ -767,8 +767,9 @@
 				<select value="90" t="highway" v="motorway_link"/>
 			</if>
 			<if param="avoid_tunnels">
-				<select value="200" t="tunnel" v="yes"/>
-				<select value="150" t="tunnel" v="avalanche_protector"/>
+                <select t="tunnel" v="yes" value="100"></select>
+                <select t="tunnel" v="avalanche_protector" value="90"></select>
+                <select t="tunnel" v="building_passage" value="80"></select>
 			</if>
 			<select value="100" t="surface" v="gravel"/>
 
