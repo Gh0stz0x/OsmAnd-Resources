@@ -800,8 +800,8 @@
 				<select value="90" t="highway" v="motorway_link"/>
 			</if>
 			<if param="avoid_tunnels">
-				<select value="200" t="tunnel" v="yes"/>
-				<select value="150" t="tunnel" v="avalanche_protector"/>
+				<select value="120" t="tunnel" v="yes"/>
+				<select value="90" t="tunnel" v="avalanche_protector"/>
 			</if>
 			<select value="100" t="surface" v="gravel"/>
 
@@ -984,7 +984,7 @@
 			</if>
 
 			<if param="avoid_tunnels">
-				<select value="0.02" t="tunnel" v="yes"/>
+				<select value="0.15" t="tunnel" v="yes"/>
 			</if>
 			<if param="avoid_toll">
 				<select value="0.1" t="toll" v="yes"/>
@@ -1977,8 +1977,8 @@
 
 		<way attribute="penalty_transition">
 			<if param="avoid_tunnels">
-				<select value="200" t="tunnel" v="yes"/>
-				<select value="150" t="tunnel" v="avalanche_protector"/>
+				<select value="120" t="tunnel" v="yes"/>
+				<select value="90" t="tunnel" v="avalanche_protector"/>
 			</if>
 			<if param="driving_style_balance">
 				<select value="5" t="highway" v="residential"/>
@@ -2215,7 +2215,7 @@
 			<select value="0.9" t="sidewalk" v="no"/>
 
 			<if param="avoid_tunnels">
-				<select value="0.02" t="tunnel" v="yes"/>
+				<select value="0.15" t="tunnel" v="yes"/>
 			</if>
 
 			<!-- object tags -->
@@ -2302,8 +2302,8 @@
 
 		<way attribute="penalty_transition">
 			<if param="avoid_tunnels">
-				<select value="200" t="tunnel" v="yes"/>
-				<select value="150" t="tunnel" v="avalanche_protector"/>
+				<select value="120" t="tunnel" v="yes"/>
+				<select value="90" t="tunnel" v="avalanche_protector"/>
 			</if>
 			<select value="0" t="route"   v="ferry"/>
 			<select value="0" t="highway" v="steps"/>
@@ -2531,7 +2531,7 @@
 			<select value="1.5" t="horse" v="official"/>
 			
 			<if param="avoid_tunnels">
-				<select value="0.02" t="tunnel" v="yes"/>
+				<select value="0.15" t="tunnel" v="yes"/>
 			</if>
 
 			<!-- object tags -->
@@ -2616,8 +2616,8 @@
 
 		<way attribute="penalty_transition">
 			<if param="avoid_tunnels">
-				<select value="200" t="tunnel" v="yes"/>
-				<select value="150" t="tunnel" v="avalanche_protector"/>
+				<select value="120" t="tunnel" v="yes"/>
+				<select value="90" t="tunnel" v="avalanche_protector"/>
 			</if>
 		</way>
 	</routingProfile>
