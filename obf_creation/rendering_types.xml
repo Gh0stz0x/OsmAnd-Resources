@@ -127,7 +127,6 @@
 	<type tag="oneway" value="no" minzoom="15" additional="true" poi="false"/>
 	<type tag="piste:oneway" value="no" minzoom="12" additional="true" poi="false"/>
 	<type tag="oneway" value="-1" minzoom="15" additional="true" poi="false"/>
-	<entity_convert pattern="tag_transform" from_tag="oneway" from_value="reverse" to_tag1="oneway" to_value1="-1"/>
 	<type tag="oneway:bicycle" value="yes" minzoom="15" additional="true" poi="false"/>
 	<type tag="oneway:bicycle" value="no" minzoom="15" additional="true" poi="false"/>
 	<entity_convert pattern="tag_transform" from_tag="highway" if_region_name="$france" if_less_tag1="maxspeed" if_less_value1="31" if_tag1="oneway" if_value1="yes" if_tag2="maxspeed" if_not_tag1="oneway:bicycle" if_not_value1="yes" to_tag1="highway" to_tag2="oneway:bicycle" to_value2="no" routing="yes"/>
@@ -3087,6 +3086,10 @@
 		<type tag="sac_scale" value="alpine_hiking" minzoom="12" additional="true"/>
 		<type tag="sac_scale" value="demanding_alpine_hiking" minzoom="12" additional="true"/>
 		<type tag="sac_scale" value="difficult_alpine_hiking" minzoom="12" additional="true"/>
+	</category>
+
+	<category name="climbing">
+		<type tag="path" value="climbing_access" minzoom="12" additional="true"/>
 	</category>
 
 	<category name="cai_scale">
@@ -6328,6 +6331,12 @@
 	<entity_convert pattern="tag_transform" from_tag="whitewater" from_value="egress" to_tag1="canoe" to_value1="egress"/>
 	<entity_convert pattern="tag_transform" from_tag="whitewater" from_value="put_in;egress" to_tag1="canoe" to_value1="put_in;egress"/>
 	<entity_convert pattern="tag_transform" from_tag="whitewater" from_value="portage_way" to_tag1="canoe" to_value1="portage"/>
+	<entity_convert pattern="tag_transform" from_tag="waterway" from_value="access_point"
+			if_not_tag1="canoe" if_not_value1="no"
+			if_not_tag2="canoe" if_not_value2="egress"
+			if_not_tag3="canoe" if_not_value3="put_in;egress"
+			to_tag1="canoe" to_value1="put_in;egress"/>
+	<entity_convert pattern="tag_transform" from_tag="canoe" from_value="put_in;egress" to_tag1="canoe" to_value1="put_in" map="no"/>
 
 	<type tag="portage" value="yes" minzoom="14"/>
 	<type tag="portage" value="designated" minzoom="14"/>
@@ -6461,6 +6470,7 @@
 		<type tag="admin_level" value="10" minzoom="12" relation="true"/>
 		<entity_convert pattern="tag_transform" from_tag="admin_level" if_tag1="amenity" if_value1="place_of_worship"/>
 		<entity_convert pattern="tag_transform" from_tag="admin_level" if_tag1="building" poi="no"/>
+		<entity_convert pattern="tag_transform" from_tag="admin_level" if_tag1="natural" if_value1="wood" poi="no"/>
 		<type tag="boundary" value="civil" minzoom="6" />
 		<type tag="boundary" value="political" minzoom="6" />
 		<type tag="boundary" value="maritime" minzoom="6" />
@@ -6552,6 +6562,7 @@
 		<type tag="sport" value="hang_gliding" minzoom="15" />
 		<type tag="sport" value="golf" minzoom="15" />
 		<type tag="sport" value="disc_golf" minzoom="15" />
+		<type tag="leisure" value="disc_golf_course" minzoom="15" />
 		<type tag="amenity" value="dojo" minzoom="15" />
 		<type tag="sport" value="gymnastics" minzoom="15" />
 		<type tag="sport" value="handball" minzoom="15" />
